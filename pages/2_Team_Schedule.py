@@ -1,6 +1,6 @@
 """
 pages/2_Team_Schedule.py
-Per-team game log with defensive stats breakdown.
+Per-team game log with defensive stats breakdown + team logo in header.
 """
 
 import json
@@ -16,6 +16,12 @@ st.set_page_config(page_title="Team Stats", page_icon="🏟️", layout="wide")
 def load_json(filename):
     path = DATA_DIR / filename
     return json.loads(path.read_text()) if path.exists() else None
+
+
+LOGO_URL = "https://a.espncdn.com/i/teamlogos/nfl/500/{abbr}.png"
+
+def logo(abbr: str) -> str:
+    return LOGO_URL.format(abbr=abbr.lower())
 
 
 # ── sidebar ───────────────────────────────────────────────────────────────────
@@ -58,10 +64,14 @@ wins = sum(
 )
 losses = len(completed) - wins
 
-# ── header ────────────────────────────────────────────────────────────────────
+# ── header with team logo ─────────────────────────────────────────────────────
 
-st.title(f"🏟️ {team_abbr} · {season} Defensive Stats")
-st.caption("Stats shown are yards/touchdowns *allowed* to the opponent each game")
+col_logo, col_title = st.columns([1, 8])
+with col_logo:
+    st.image(logo(team_abbr), width=72)
+with col_title:
+    st.title(f"{team_abbr} · {season} Defensive Stats")
+    st.caption("Stats shown are yards/points *allowed* to the opponent each game")
 
 c1, c2, c3 = st.columns(3)
 c1.metric("Record", f"{wins}–{losses}")
@@ -85,21 +95,21 @@ def build_rows(game_list):
         d = g.get("defensive_stats", {})
 
         rows.append({
-            "Wk":              g.get("week") or "—",
-            "Date":            g["date"][:10],
-            "H/A":             "vs" if is_home else "@",
-            "Opponent":        opp,
-            "Score":           f"{team_score}–{opp_score}",
-            "W/L":             "W" if won else "L",
-            "Pts Allowed":     d.get("points_allowed"),
-            "Pass Yds Allowed":d.get("pass_yards_allowed"),
-            "Rush Yds Allowed":d.get("rush_yards_allowed"),
+            "Wk":               g.get("week") or "—",
+            "Date":             g["date"][:10],
+            "H/A":              "vs" if is_home else "@",
+            "Opponent":         opp,
+            "Score":            f"{team_score}–{opp_score}",
+            "W/L":              "W" if won else "L",
+            "Pts Allowed":      d.get("points_allowed"),
+            "Pass Yds Allowed": d.get("pass_yards_allowed"),
+            "Rush Yds Allowed": d.get("rush_yards_allowed"),
             "Total Yds Allowed":d.get("total_yards_allowed"),
-            "Opp Comp%":       d.get("opp_comp_pct"),
-            "Opp Pass Line":   d.get("opp_passing_line", ""),
-            "INTs":            d.get("interceptions"),
-            "3rd Down Eff":    d.get("third_down_eff", ""),
-            "Possession":      d.get("possession_time", ""),
+            "Opp Comp%":        d.get("opp_comp_pct"),
+            "Pass Line":        d.get("opp_passing_line", ""),
+            "INTs":             d.get("interceptions"),
+            "3rd Down":         d.get("third_down_eff", ""),
+            "Possession":       d.get("possession_time", ""),
         })
     return rows
 
@@ -161,18 +171,16 @@ def style_table(df):
     return styled.format(na_rep="—", precision=1).hide(axis="index")
 
 
-def show_averages(rows, label=""):
+def show_averages(rows):
     if not rows:
         return
-    if label:
-        st.subheader(f"{label} averages")
     cols = st.columns(6)
-    cols[0].metric("Pts Allowed",   avg([r["Pts Allowed"]      for r in rows]))
-    cols[1].metric("Pass Yds",      avg([r["Pass Yds Allowed"] for r in rows]))
-    cols[2].metric("Rush Yds",      avg([r["Rush Yds Allowed"] for r in rows]))
-    cols[3].metric("Total Yds",     avg([r["Total Yds Allowed"]for r in rows]))
-    cols[4].metric("Opp Comp%",     avg([r["Opp Comp%"]        for r in rows]))
-    cols[5].metric("INTs/game",     avg([r["INTs"]             for r in rows]))
+    cols[0].metric("Pts Allowed",  avg([r["Pts Allowed"]       for r in rows]))
+    cols[1].metric("Pass Yds",     avg([r["Pass Yds Allowed"]  for r in rows]))
+    cols[2].metric("Rush Yds",     avg([r["Rush Yds Allowed"]  for r in rows]))
+    cols[3].metric("Total Yds",    avg([r["Total Yds Allowed"] for r in rows]))
+    cols[4].metric("Opp Comp%",    avg([r["Opp Comp%"]         for r in rows]))
+    cols[5].metric("INTs/game",    avg([r["INTs"]              for r in rows]))
 
 
 all_rows  = build_rows(games)
@@ -188,6 +196,7 @@ tab_all, tab_home, tab_away, tab_avgs = st.tabs([
 with tab_all:
     if all_rows:
         st.dataframe(style_table(pd.DataFrame(all_rows)), use_container_width=True, hide_index=True)
+        st.divider()
         show_averages(all_rows)
     else:
         st.info("No completed games with stats yet.")
@@ -195,14 +204,16 @@ with tab_all:
 with tab_home:
     if home_rows:
         st.dataframe(style_table(pd.DataFrame(home_rows)), use_container_width=True, hide_index=True)
-        show_averages(home_rows, "Home")
+        st.divider()
+        show_averages(home_rows)
     else:
         st.info("No completed home games yet.")
 
 with tab_away:
     if away_rows:
         st.dataframe(style_table(pd.DataFrame(away_rows)), use_container_width=True, hide_index=True)
-        show_averages(away_rows, "Away")
+        st.divider()
+        show_averages(away_rows)
     else:
         st.info("No completed away games yet.")
 
@@ -219,10 +230,9 @@ with tab_avgs:
         ]
         avgs = []
         for col, label in stat_cols:
-            vals = [r[col] for r in all_rows if r.get(col) is not None]
             avgs.append({
                 "Stat":    label,
-                "Overall": avg(vals),
+                "Overall": avg([r[col] for r in all_rows  if r.get(col) is not None]),
                 "Home":    avg([r[col] for r in home_rows if r.get(col) is not None]),
                 "Away":    avg([r[col] for r in away_rows if r.get(col) is not None]),
             })
@@ -233,4 +243,4 @@ with tab_avgs:
         st.info("No stats to average yet.")
 
 fetched = schedule.get("fetched_at", "")[:16].replace("T", " ")
-st.caption(f"Data fetched: {fetched} UTC · Green = good defense · Red = poor defense · ESPN does not provide rush/rec TD splits")
+st.caption(f"Data fetched: {fetched} UTC · Green = good defense · Red = poor defense")
