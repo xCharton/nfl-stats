@@ -7,7 +7,7 @@
       "id": "401772723",
       "week": 1,
       "date": "2025-09-07T20:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "LAR",
@@ -17,13 +17,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "LAR",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 224,
+        "rush_yards_allowed": 72,
+        "receiving_yards_allowed": 224,
+        "total_yards_allowed": 296,
+        "opp_comp_pct": 72.4,
+        "opp_passing_line": "21/29",
+        "interceptions": 0,
+        "points_allowed": 14,
+        "third_down_eff": "7-13",
+        "possession_time": "28:35"
+      }
     },
     {
       "id": "401772715",
       "week": 2,
       "date": "2025-09-15T23:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -33,13 +44,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "TB",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 191,
+        "rush_yards_allowed": 169,
+        "receiving_yards_allowed": 191,
+        "total_yards_allowed": 360,
+        "opp_comp_pct": 65.8,
+        "opp_passing_line": "25/38",
+        "interceptions": 0,
+        "points_allowed": 20,
+        "third_down_eff": "6-14",
+        "possession_time": "37:09"
+      }
     },
     {
       "id": "401772734",
       "week": 3,
       "date": "2025-09-21T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "JAX",
@@ -49,13 +71,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "JAX",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 205,
+        "rush_yards_allowed": 86,
+        "receiving_yards_allowed": 205,
+        "total_yards_allowed": 291,
+        "opp_comp_pct": 50.0,
+        "opp_passing_line": "20/40",
+        "interceptions": 1,
+        "points_allowed": 17,
+        "third_down_eff": "4-15",
+        "possession_time": "31:18"
+      }
     },
     {
       "id": "401772738",
       "week": 4,
       "date": "2025-09-28T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -65,13 +98,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "TEN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 93,
+        "rush_yards_allowed": 82,
+        "receiving_yards_allowed": 93,
+        "total_yards_allowed": 175,
+        "opp_comp_pct": 38.5,
+        "opp_passing_line": "10/26",
+        "interceptions": 1,
+        "points_allowed": 0,
+        "third_down_eff": "2-11",
+        "possession_time": "21:39"
+      }
     },
     {
       "id": "401772743",
       "week": 5,
       "date": "2025-10-05T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "BAL",
@@ -81,13 +125,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "BAL",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 163,
+        "rush_yards_allowed": 44,
+        "receiving_yards_allowed": 163,
+        "total_yards_allowed": 207,
+        "opp_comp_pct": 70.0,
+        "opp_passing_line": "14/20",
+        "interceptions": 3,
+        "points_allowed": 10,
+        "third_down_eff": "3-8",
+        "possession_time": "23:27"
+      }
     },
     {
       "id": "401772826",
       "week": 7,
       "date": "2025-10-21T02:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "SEA",
@@ -97,13 +152,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "SEA",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 198,
+        "rush_yards_allowed": 118,
+        "receiving_yards_allowed": 198,
+        "total_yards_allowed": 316,
+        "opp_comp_pct": 53.1,
+        "opp_passing_line": "17/32",
+        "interceptions": 2,
+        "points_allowed": 27,
+        "third_down_eff": "2-14",
+        "possession_time": "32:17"
+      }
     },
     {
       "id": "401772866",
       "week": 8,
       "date": "2025-10-26T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -113,13 +179,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "SF",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 175,
+        "rush_yards_allowed": 48,
+        "receiving_yards_allowed": 175,
+        "total_yards_allowed": 223,
+        "opp_comp_pct": 59.4,
+        "opp_passing_line": "19/32",
+        "interceptions": 1,
+        "points_allowed": 15,
+        "third_down_eff": "3-9",
+        "possession_time": "18:38"
+      }
     },
     {
       "id": "401772870",
       "week": 9,
       "date": "2025-11-02T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -129,13 +206,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "DEN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 171,
+        "rush_yards_allowed": 100,
+        "receiving_yards_allowed": 171,
+        "total_yards_allowed": 271,
+        "opp_comp_pct": 48.6,
+        "opp_passing_line": "18/37",
+        "interceptions": 1,
+        "points_allowed": 18,
+        "third_down_eff": "6-15",
+        "possession_time": "25:24"
+      }
     },
     {
       "id": "401772770",
       "week": 10,
       "date": "2025-11-09T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -145,13 +233,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "JAX",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 119,
+        "rush_yards_allowed": 94,
+        "receiving_yards_allowed": 119,
+        "total_yards_allowed": 213,
+        "opp_comp_pct": 56.5,
+        "opp_passing_line": "13/23",
+        "interceptions": 1,
+        "points_allowed": 29,
+        "third_down_eff": "4-11",
+        "possession_time": "29:00"
+      }
     },
     {
       "id": "401772881",
       "week": 11,
       "date": "2025-11-16T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "TEN",
@@ -161,13 +260,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "TEN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 171,
+        "rush_yards_allowed": 58,
+        "receiving_yards_allowed": 171,
+        "total_yards_allowed": 229,
+        "opp_comp_pct": 64.9,
+        "opp_passing_line": "24/37",
+        "interceptions": 0,
+        "points_allowed": 13,
+        "third_down_eff": "6-15",
+        "possession_time": "28:57"
+      }
     },
     {
       "id": "401772946",
       "week": 12,
       "date": "2025-11-21T01:15Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -177,13 +287,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "BUF",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 183,
+        "rush_yards_allowed": 143,
+        "receiving_yards_allowed": 183,
+        "total_yards_allowed": 326,
+        "opp_comp_pct": 70.6,
+        "opp_passing_line": "24/34",
+        "interceptions": 2,
+        "points_allowed": 19,
+        "third_down_eff": "5-16",
+        "possession_time": "32:22"
+      }
     },
     {
       "id": "401772787",
       "week": 13,
       "date": "2025-11-30T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "IND",
@@ -193,13 +314,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "IND",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 195,
+        "rush_yards_allowed": 86,
+        "receiving_yards_allowed": 195,
+        "total_yards_allowed": 281,
+        "opp_comp_pct": 51.9,
+        "opp_passing_line": "14/27",
+        "interceptions": 0,
+        "points_allowed": 16,
+        "third_down_eff": "3-10",
+        "possession_time": "25:02"
+      }
     },
     {
       "id": "401772932",
       "week": 14,
       "date": "2025-12-08T01:20Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "KC",
@@ -209,13 +341,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "KC",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 148,
+        "rush_yards_allowed": 126,
+        "receiving_yards_allowed": 148,
+        "total_yards_allowed": 274,
+        "opp_comp_pct": 42.4,
+        "opp_passing_line": "14/33",
+        "interceptions": 3,
+        "points_allowed": 10,
+        "third_down_eff": "4-14",
+        "possession_time": "28:02"
+      }
     },
     {
       "id": "401772903",
       "week": 15,
       "date": "2025-12-14T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -225,13 +368,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "ARI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 235,
+        "rush_yards_allowed": 72,
+        "receiving_yards_allowed": 235,
+        "total_yards_allowed": 307,
+        "opp_comp_pct": 67.5,
+        "opp_passing_line": "27/40",
+        "interceptions": 1,
+        "points_allowed": 20,
+        "third_down_eff": "5-12",
+        "possession_time": "27:42"
+      }
     },
     {
       "id": "401772805",
       "week": 16,
       "date": "2025-12-21T21:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -241,13 +395,24 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "LV",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 170,
+        "rush_yards_allowed": 145,
+        "receiving_yards_allowed": 170,
+        "total_yards_allowed": 315,
+        "opp_comp_pct": 69.6,
+        "opp_passing_line": "16/23",
+        "interceptions": 1,
+        "points_allowed": 21,
+        "third_down_eff": "6-14",
+        "possession_time": "28:14"
+      }
     },
     {
       "id": "401772951",
       "week": 17,
       "date": "2025-12-27T21:30Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "LAC",
@@ -257,13 +422,24 @@
       "home_winner": false,
       "away_winner": true,
       "opponent": "LAC",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 201,
+        "rush_yards_allowed": 74,
+        "receiving_yards_allowed": 201,
+        "total_yards_allowed": 275,
+        "opp_comp_pct": 65.6,
+        "opp_passing_line": "21/32",
+        "interceptions": 1,
+        "points_allowed": 16,
+        "third_down_eff": "6-15",
+        "possession_time": "29:39"
+      }
     },
     {
       "id": "401772962",
       "week": 18,
       "date": "2026-01-04T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "HOU",
@@ -273,7 +449,18 @@
       "home_winner": true,
       "away_winner": false,
       "opponent": "IND",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 278,
+        "rush_yards_allowed": 76,
+        "receiving_yards_allowed": 278,
+        "total_yards_allowed": 354,
+        "opp_comp_pct": 62.9,
+        "opp_passing_line": "22/35",
+        "interceptions": 1,
+        "points_allowed": 30,
+        "third_down_eff": "8-15",
+        "possession_time": "31:45"
+      }
     }
   ]
 }
