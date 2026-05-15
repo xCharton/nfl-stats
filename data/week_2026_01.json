@@ -1,0 +1,439 @@
+{
+  "season": 2026,
+  "week": 1,
+  "fetched_at": "2026-05-15T03:55:11.369052Z",
+  "games": [
+    {
+      "id": "401872656",
+      "name": "New England Patriots at Seattle Seahawks",
+      "short_name": "NE @ SEA",
+      "date": "2026-09-10T00:20Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "26",
+        "abbr": "SEA",
+        "name": "Seattle Seahawks",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
+        "color": "002a5c"
+      },
+      "away": {
+        "id": "17",
+        "abbr": "NE",
+        "name": "New England Patriots",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png",
+        "color": "002a5c"
+      },
+      "venue": "Lumen Field"
+    },
+    {
+      "id": "401872657",
+      "name": "San Francisco 49ers at Los Angeles Rams",
+      "short_name": "SF VS LAR",
+      "date": "2026-09-11T00:35Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "14",
+        "abbr": "LAR",
+        "name": "Los Angeles Rams",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+        "color": "003594"
+      },
+      "away": {
+        "id": "25",
+        "abbr": "SF",
+        "name": "San Francisco 49ers",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
+        "color": "aa0000"
+      },
+      "venue": "Melbourne Cricket Ground"
+    },
+    {
+      "id": "401872925",
+      "name": "Tampa Bay Buccaneers at Cincinnati Bengals",
+      "short_name": "TB @ CIN",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "4",
+        "abbr": "CIN",
+        "name": "Cincinnati Bengals",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+        "color": "fb4f14"
+      },
+      "away": {
+        "id": "27",
+        "abbr": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png",
+        "color": "bd1c36"
+      },
+      "venue": "Paycor Stadium"
+    },
+    {
+      "id": "401872923",
+      "name": "New Orleans Saints at Detroit Lions",
+      "short_name": "NO @ DET",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "8",
+        "abbr": "DET",
+        "name": "Detroit Lions",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
+        "color": "0076b6"
+      },
+      "away": {
+        "id": "18",
+        "abbr": "NO",
+        "name": "New Orleans Saints",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
+        "color": "d3bc8d"
+      },
+      "venue": "Ford Field"
+    },
+    {
+      "id": "401872924",
+      "name": "New York Jets at Tennessee Titans",
+      "short_name": "NYJ @ TEN",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "10",
+        "abbr": "TEN",
+        "name": "Tennessee Titans",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
+        "color": "4495d2"
+      },
+      "away": {
+        "id": "20",
+        "abbr": "NYJ",
+        "name": "New York Jets",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
+        "color": "115740"
+      },
+      "venue": "Nissan Stadium"
+    },
+    {
+      "id": "401872659",
+      "name": "Baltimore Ravens at Indianapolis Colts",
+      "short_name": "BAL @ IND",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "11",
+        "abbr": "IND",
+        "name": "Indianapolis Colts",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+        "color": "003b75"
+      },
+      "away": {
+        "id": "33",
+        "abbr": "BAL",
+        "name": "Baltimore Ravens",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+        "color": "29126f"
+      },
+      "venue": "Lucas Oil Stadium"
+    },
+    {
+      "id": "401872658",
+      "name": "Atlanta Falcons at Pittsburgh Steelers",
+      "short_name": "ATL @ PIT",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "23",
+        "abbr": "PIT",
+        "name": "Pittsburgh Steelers",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+        "color": "000000"
+      },
+      "away": {
+        "id": "1",
+        "abbr": "ATL",
+        "name": "Atlanta Falcons",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
+        "color": "a71930"
+      },
+      "venue": "Acrisure Stadium"
+    },
+    {
+      "id": "401872661",
+      "name": "Chicago Bears at Carolina Panthers",
+      "short_name": "CHI @ CAR",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "29",
+        "abbr": "CAR",
+        "name": "Carolina Panthers",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+        "color": "0085ca"
+      },
+      "away": {
+        "id": "3",
+        "abbr": "CHI",
+        "name": "Chicago Bears",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+        "color": "0b1c3a"
+      },
+      "venue": "Bank of America Stadium"
+    },
+    {
+      "id": "401872922",
+      "name": "Cleveland Browns at Jacksonville Jaguars",
+      "short_name": "CLE @ JAX",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "30",
+        "abbr": "JAX",
+        "name": "Jacksonville Jaguars",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+        "color": "007487"
+      },
+      "away": {
+        "id": "5",
+        "abbr": "CLE",
+        "name": "Cleveland Browns",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
+        "color": "472a08"
+      },
+      "venue": "EverBank Stadium"
+    },
+    {
+      "id": "401872660",
+      "name": "Buffalo Bills at Houston Texans",
+      "short_name": "BUF @ HOU",
+      "date": "2026-09-13T17:00Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "34",
+        "abbr": "HOU",
+        "name": "Houston Texans",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+        "color": "00143f"
+      },
+      "away": {
+        "id": "2",
+        "abbr": "BUF",
+        "name": "Buffalo Bills",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+        "color": "00338d"
+      },
+      "venue": "NRG Stadium"
+    },
+    {
+      "id": "401872928",
+      "name": "Miami Dolphins at Las Vegas Raiders",
+      "short_name": "MIA @ LV",
+      "date": "2026-09-13T20:25Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "13",
+        "abbr": "LV",
+        "name": "Las Vegas Raiders",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
+        "color": "000000"
+      },
+      "away": {
+        "id": "15",
+        "abbr": "MIA",
+        "name": "Miami Dolphins",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
+        "color": "008e97"
+      },
+      "venue": "Allegiant Stadium"
+    },
+    {
+      "id": "401872927",
+      "name": "Green Bay Packers at Minnesota Vikings",
+      "short_name": "GB @ MIN",
+      "date": "2026-09-13T20:25Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "16",
+        "abbr": "MIN",
+        "name": "Minnesota Vikings",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
+        "color": "4f2683"
+      },
+      "away": {
+        "id": "9",
+        "abbr": "GB",
+        "name": "Green Bay Packers",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+        "color": "204e32"
+      },
+      "venue": "U.S. Bank Stadium"
+    },
+    {
+      "id": "401872929",
+      "name": "Washington Commanders at Philadelphia Eagles",
+      "short_name": "WSH @ PHI",
+      "date": "2026-09-13T20:25Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "21",
+        "abbr": "PHI",
+        "name": "Philadelphia Eagles",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+        "color": "06424d"
+      },
+      "away": {
+        "id": "28",
+        "abbr": "WSH",
+        "name": "Washington Commanders",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
+        "color": "5a1414"
+      },
+      "venue": "Lincoln Financial Field"
+    },
+    {
+      "id": "401872926",
+      "name": "Arizona Cardinals at Los Angeles Chargers",
+      "short_name": "ARI @ LAC",
+      "date": "2026-09-13T20:25Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "24",
+        "abbr": "LAC",
+        "name": "Los Angeles Chargers",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
+        "color": "0080c6"
+      },
+      "away": {
+        "id": "22",
+        "abbr": "ARI",
+        "name": "Arizona Cardinals",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
+        "color": "a40227"
+      },
+      "venue": "SoFi Stadium"
+    },
+    {
+      "id": "401872930",
+      "name": "Dallas Cowboys at New York Giants",
+      "short_name": "DAL @ NYG",
+      "date": "2026-09-14T00:20Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "19",
+        "abbr": "NYG",
+        "name": "New York Giants",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+        "color": "003c7f"
+      },
+      "away": {
+        "id": "6",
+        "abbr": "DAL",
+        "name": "Dallas Cowboys",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
+        "color": "002a5c"
+      },
+      "venue": "MetLife Stadium"
+    },
+    {
+      "id": "401872931",
+      "name": "Denver Broncos at Kansas City Chiefs",
+      "short_name": "DEN @ KC",
+      "date": "2026-09-15T00:15Z",
+      "status": "STATUS_SCHEDULED",
+      "completed": false,
+      "home": {
+        "id": "12",
+        "abbr": "KC",
+        "name": "Kansas City Chiefs",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+        "color": "e31837"
+      },
+      "away": {
+        "id": "7",
+        "abbr": "DEN",
+        "name": "Denver Broncos",
+        "score": 0,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+        "color": "0a2343"
+      },
+      "venue": "GEHA Field at Arrowhead Stadium"
+    }
+  ]
+}

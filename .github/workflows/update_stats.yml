@@ -1,0 +1,43 @@
+name: Update NFL Stats
+
+on:
+  # Every Tuesday at 6 AM UTC (after Monday Night Football)
+  schedule:
+    - cron: "0 6 * * 2"
+
+  # Manual trigger from GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "fetch_stats.py command (e.g. 'current', 'all --season 2025')"
+        required: false
+        default: "current"
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No extra dependencies needed — fetch_stats.py uses only stdlib
+      - name: Fetch NFL data
+        run: |
+          CMD="${{ github.event.inputs.command || 'current' }}"
+          python fetch_stats.py $CMD
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: update NFL stats $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
