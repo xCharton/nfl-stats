@@ -1,6 +1,6 @@
 """
 pages/2_Team_Schedule.py
-Per-team game log for the selected season
+Per-team game log with defensive stats breakdown.
 """
 
 import json
@@ -10,13 +10,16 @@ import pandas as pd
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 
-st.set_page_config(page_title="Team Schedule", page_icon="🏟️", layout="wide")
+st.set_page_config(page_title="Team Stats", page_icon="🏟️", layout="wide")
+
 
 def load_json(filename):
     path = DATA_DIR / filename
     return json.loads(path.read_text()) if path.exists() else None
 
-# Build team list from available schedule files
+
+# ── sidebar ───────────────────────────────────────────────────────────────────
+
 schedule_files = list(DATA_DIR.glob("schedule_*_*.json"))
 available_teams = sorted({f.stem.split("_")[1].upper() for f in schedule_files})
 
@@ -31,25 +34,23 @@ with st.sidebar:
         seasons = [f.stem.split("_")[-1] for f in season_files]
         season = st.selectbox("Season", seasons) if seasons else None
     else:
-        st.warning("No team schedules yet.\nRun `python fetch_stats.py team NE` etc.")
-        team_abbr = None
-        season = None
+        st.warning("No team data yet.\n\nIn Terminal run:\n```\npython3 fetch_stats.py team NE\n```")
+        st.stop()
 
-st.title("🏟️ Team Schedule")
+# ── load data ─────────────────────────────────────────────────────────────────
 
-if not team_abbr or not season:
-    st.info("Select a team in the sidebar. Fetch team data first with:\n```\npython fetch_stats.py team NE\n```")
+if not season:
+    st.info("Select a team in the sidebar.")
     st.stop()
 
 schedule = load_json(f"schedule_{team_abbr.lower()}_{season}.json")
 if not schedule:
-    st.warning(f"No data for {team_abbr} {season}. Run: `python fetch_stats.py team {team_abbr} --season {season}`")
+    st.warning(f"No data for {team_abbr} {season}.")
     st.stop()
-
-st.subheader(f"{team_abbr} · {season} Season")
 
 games = schedule.get("games", [])
 completed = [g for g in games if g["completed"]]
+
 wins = sum(
     1 for g in completed
     if (g["home_abbr"] == team_abbr and g["home_winner"])
@@ -57,45 +58,179 @@ wins = sum(
 )
 losses = len(completed) - wins
 
-col1, col2, col3 = st.columns(3)
-col1.metric("Record", f"{wins}–{losses}")
-col2.metric("Games played", len(completed))
-col3.metric("Remaining", len(games) - len(completed))
+# ── header ────────────────────────────────────────────────────────────────────
+
+st.title(f"🏟️ {team_abbr} · {season} Defensive Stats")
+st.caption("Stats shown are yards/touchdowns *allowed* to the opponent each game")
+
+c1, c2, c3 = st.columns(3)
+c1.metric("Record", f"{wins}–{losses}")
+c2.metric("Games Played", len(completed))
+c3.metric("Remaining", len(games) - len(completed))
 
 st.divider()
 
-rows = []
-for g in games:
-    is_home = g["home_abbr"] == team_abbr
-    opp = g["away_abbr"] if is_home else g["home_abbr"]
-    team_score = g["home_score"] if is_home else g["away_score"]
-    opp_score = g["away_score"] if is_home else g["home_score"]
-    won = (g["home_winner"] if is_home else g["away_winner"]) if g["completed"] else None
+# ── build rows ────────────────────────────────────────────────────────────────
 
-    result = ("W" if won else "L") if g["completed"] else g.get("status", "—")
-    score = f"{team_score}–{opp_score}" if g["completed"] else "—"
-    location = "vs" if is_home else "@"
+def build_rows(game_list):
+    rows = []
+    for g in game_list:
+        if not g["completed"]:
+            continue
+        is_home = g.get("is_home", g["home_abbr"] == team_abbr)
+        opp = g["away_abbr"] if is_home else g["home_abbr"]
+        team_score = g["home_score"] if is_home else g["away_score"]
+        opp_score  = g["away_score"] if is_home else g["home_score"]
+        won = g["home_winner"] if is_home else g["away_winner"]
+        d = g.get("defensive_stats", {})
 
-    rows.append({
-        "Wk": g.get("week") or "—",
-        "Date": g["date"][:10],
-        "H/A": location,
-        "Opponent": opp,
-        "Score": score,
-        "Result": result,
-    })
+        rows.append({
+            "Wk":              g.get("week") or "—",
+            "Date":            g["date"][:10],
+            "H/A":             "vs" if is_home else "@",
+            "Opponent":        opp,
+            "Score":           f"{team_score}–{opp_score}",
+            "W/L":             "W" if won else "L",
+            "Pts Allowed":     d.get("points_allowed"),
+            "Pass Yds Allowed":d.get("pass_yards_allowed"),
+            "Rush Yds Allowed":d.get("rush_yards_allowed"),
+            "Total Yds Allowed":d.get("total_yards_allowed"),
+            "Opp Comp%":       d.get("opp_comp_pct"),
+            "Opp Pass Line":   d.get("opp_passing_line", ""),
+            "INTs":            d.get("interceptions"),
+            "3rd Down Eff":    d.get("third_down_eff", ""),
+            "Possession":      d.get("possession_time", ""),
+        })
+    return rows
 
-df = pd.DataFrame(rows)
 
-def style_result(val):
-    if val == "W":
-        return "color: #1a6e2e; font-weight: 700"
-    elif val == "L":
-        return "color: #b91c1c; font-weight: 700"
-    return "color: #888888"
+def avg(vals):
+    v = [x for x in vals if x is not None]
+    return round(sum(v) / len(v), 1) if v else None
 
-styled = df.style.applymap(style_result, subset=["Result"]).hide(axis="index")
-st.dataframe(styled, use_container_width=True, hide_index=True)
+
+def style_table(df):
+    def color_wl(val):
+        if val == "W": return "color: #1a6e2e; font-weight: 700"
+        if val == "L": return "color: #b91c1c; font-weight: 700"
+        return ""
+
+    def color_pts(val):
+        try:
+            v = float(val)
+            if v <= 17: return "color: #1a6e2e; font-weight: 600"
+            if v >= 28: return "color: #b91c1c; font-weight: 600"
+        except: pass
+        return ""
+
+    def color_pass(val):
+        try:
+            v = float(val)
+            if v < 200: return "color: #1a6e2e"
+            if v > 300: return "color: #b91c1c"
+        except: pass
+        return ""
+
+    def color_rush(val):
+        try:
+            v = float(val)
+            if v < 90:  return "color: #1a6e2e"
+            if v > 140: return "color: #b91c1c"
+        except: pass
+        return ""
+
+    def color_int(val):
+        try:
+            v = float(val)
+            if v >= 2: return "color: #1a6e2e; font-weight: 600"
+            if v == 0: return "color: #b91c1c"
+        except: pass
+        return ""
+
+    styled = df.style
+    for col, fn in [
+        ("W/L",              color_wl),
+        ("Pts Allowed",      color_pts),
+        ("Pass Yds Allowed", color_pass),
+        ("Rush Yds Allowed", color_rush),
+        ("INTs",             color_int),
+    ]:
+        if col in df.columns:
+            styled = styled.map(fn, subset=[col])
+
+    return styled.format(na_rep="—", precision=1).hide(axis="index")
+
+
+def show_averages(rows, label=""):
+    if not rows:
+        return
+    if label:
+        st.subheader(f"{label} averages")
+    cols = st.columns(6)
+    cols[0].metric("Pts Allowed",   avg([r["Pts Allowed"]      for r in rows]))
+    cols[1].metric("Pass Yds",      avg([r["Pass Yds Allowed"] for r in rows]))
+    cols[2].metric("Rush Yds",      avg([r["Rush Yds Allowed"] for r in rows]))
+    cols[3].metric("Total Yds",     avg([r["Total Yds Allowed"]for r in rows]))
+    cols[4].metric("Opp Comp%",     avg([r["Opp Comp%"]        for r in rows]))
+    cols[5].metric("INTs/game",     avg([r["INTs"]             for r in rows]))
+
+
+all_rows  = build_rows(games)
+home_rows = build_rows([g for g in games if g.get("is_home", g["home_abbr"] == team_abbr)])
+away_rows = build_rows([g for g in games if not g.get("is_home", g["home_abbr"] == team_abbr)])
+
+# ── tabs ──────────────────────────────────────────────────────────────────────
+
+tab_all, tab_home, tab_away, tab_avgs = st.tabs([
+    "📋 Game by Game", "🏠 Home Games", "✈️ Away Games", "📊 Season Averages"
+])
+
+with tab_all:
+    if all_rows:
+        st.dataframe(style_table(pd.DataFrame(all_rows)), use_container_width=True, hide_index=True)
+        show_averages(all_rows)
+    else:
+        st.info("No completed games with stats yet.")
+
+with tab_home:
+    if home_rows:
+        st.dataframe(style_table(pd.DataFrame(home_rows)), use_container_width=True, hide_index=True)
+        show_averages(home_rows, "Home")
+    else:
+        st.info("No completed home games yet.")
+
+with tab_away:
+    if away_rows:
+        st.dataframe(style_table(pd.DataFrame(away_rows)), use_container_width=True, hide_index=True)
+        show_averages(away_rows, "Away")
+    else:
+        st.info("No completed away games yet.")
+
+with tab_avgs:
+    st.subheader(f"{team_abbr} · Full season defensive averages")
+    if all_rows:
+        stat_cols = [
+            ("Pts Allowed",       "Points allowed/game"),
+            ("Pass Yds Allowed",  "Pass yards allowed/game"),
+            ("Rush Yds Allowed",  "Rush yards allowed/game"),
+            ("Total Yds Allowed", "Total yards allowed/game"),
+            ("Opp Comp%",         "Opponent completion %"),
+            ("INTs",              "Interceptions forced/game"),
+        ]
+        avgs = []
+        for col, label in stat_cols:
+            vals = [r[col] for r in all_rows if r.get(col) is not None]
+            avgs.append({
+                "Stat":    label,
+                "Overall": avg(vals),
+                "Home":    avg([r[col] for r in home_rows if r.get(col) is not None]),
+                "Away":    avg([r[col] for r in away_rows if r.get(col) is not None]),
+            })
+        df_avg = pd.DataFrame(avgs)
+        st.dataframe(df_avg.style.format(na_rep="—", precision=1).hide(axis="index"),
+                     use_container_width=True, hide_index=True)
+    else:
+        st.info("No stats to average yet.")
 
 fetched = schedule.get("fetched_at", "")[:16].replace("T", " ")
-st.caption(f"Data fetched: {fetched} UTC")
+st.caption(f"Data fetched: {fetched} UTC · Green = good defense · Red = poor defense · ESPN does not provide rush/rec TD splits")

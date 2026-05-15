@@ -5,7 +5,7 @@ Run manually or via GitHub Actions cron.
 """
 
 import json
-import os
+import time
 from datetime import datetime
 from pathlib import Path
 import urllib.request
@@ -28,6 +28,27 @@ def save(name: str, data: dict):
     print(f"  saved {path}")
 
 
+def parse_score(val):
+    """Handle score returned as string, int, float, or dict like {'value': 24}."""
+    if isinstance(val, dict):
+        val = val.get("value", val.get("displayValue", 0))
+    try:
+        return int(float(str(val)))
+    except Exception:
+        return 0
+
+
+def parse_status(event: dict) -> tuple[bool, str]:
+    """Return (completed, status_name) handling varied ESPN status shapes."""
+    s = event.get("status", {})
+    # Some endpoints nest under "type"
+    if "type" in s and isinstance(s["type"], dict):
+        s = s["type"]
+    completed = bool(s.get("completed", False))
+    name = s.get("name", s.get("description", "Scheduled"))
+    return completed, name
+
+
 def fetch_scoreboard(week: int = None, season: int = None):
     url = f"{BASE}/scoreboard"
     params = []
@@ -47,7 +68,7 @@ def fetch_scoreboard(week: int = None, season: int = None):
 
     for event in raw.get("events", []):
         comp = event["competitions"][0]
-        status = event["status"]["type"]
+        completed, status_name = parse_status(event)
         home = next(t for t in comp["competitors"] if t["homeAway"] == "home")
         away = next(t for t in comp["competitors"] if t["homeAway"] == "away")
 
@@ -56,13 +77,13 @@ def fetch_scoreboard(week: int = None, season: int = None):
             "name": event["name"],
             "short_name": event["shortName"],
             "date": event["date"],
-            "status": status["name"],
-            "completed": status["completed"],
+            "status": status_name,
+            "completed": completed,
             "home": {
                 "id": home["id"],
                 "abbr": home["team"]["abbreviation"],
                 "name": home["team"]["displayName"],
-                "score": int(home.get("score", 0) or 0),
+                "score": parse_score(home.get("score", 0)),
                 "winner": home.get("winner", False),
                 "logo": home["team"].get("logo", ""),
                 "color": home["team"].get("color", "013369"),
@@ -71,7 +92,7 @@ def fetch_scoreboard(week: int = None, season: int = None):
                 "id": away["id"],
                 "abbr": away["team"]["abbreviation"],
                 "name": away["team"]["displayName"],
-                "score": int(away.get("score", 0) or 0),
+                "score": parse_score(away.get("score", 0)),
                 "winner": away.get("winner", False),
                 "logo": away["team"].get("logo", ""),
                 "color": away["team"].get("color", "D50A0A"),
@@ -88,6 +109,55 @@ def fetch_scoreboard(week: int = None, season: int = None):
     fname = f"week_{season_year}_{str(week_num).zfill(2)}.json"
     save(fname, result)
     return result
+
+
+def fetch_game_detail(game_id: str) -> dict:
+    """Fetch box score for a single game. Returns per-team stats dict keyed by abbreviation."""
+    url = f"{BASE}/summary?event={game_id}"
+    try:
+        raw = fetch(url)
+    except Exception as e:
+        print(f"    could not fetch game {game_id}: {e}")
+        return {}
+
+    teams_info = {}
+    for team_data in raw.get("boxscore", {}).get("teams", []):
+        team = team_data.get("team", {})
+        abbr = team.get("abbreviation", "").upper()
+        stats_list = team_data.get("statistics", [])
+        stats = {s["name"]: s.get("displayValue", s.get("value", "")) for s in stats_list}
+        teams_info[abbr] = {"homeAway": team_data.get("homeAway", ""), "stats": stats}
+
+    return teams_info
+
+
+def parse_defensive_stats(teams_info: dict, team_abbr: str, opponent_abbr: str) -> dict:
+    """Opponent's offensive stats = our defensive stats allowed."""
+    opp = teams_info.get(opponent_abbr.upper(), {}).get("stats", {})
+    our = teams_info.get(team_abbr.upper(), {}).get("stats", {})
+
+    def safe_int(val):
+        try:
+            return int(str(val).replace(",", "").split(".")[0])
+        except Exception:
+            return None
+
+    def safe_float(val):
+        try:
+            return float(str(val).replace("%", ""))
+        except Exception:
+            return None
+
+    return {
+        "pass_yards_allowed":      safe_int(opp.get("passingYards") or opp.get("netPassingYards")),
+        "rush_yards_allowed":      safe_int(opp.get("rushingYards")),
+        "receiving_yards_allowed": safe_int(opp.get("passingYards") or opp.get("netPassingYards")),
+        "rush_td_allowed":         safe_int(opp.get("rushingTouchdowns")),
+        "receiving_td_allowed":    safe_int(opp.get("passingTouchdowns")),
+        "opp_comp_pct":            safe_float(opp.get("completionPct")),
+        "our_comp_pct":            safe_float(our.get("completionPct")),
+        "opp_passing_line":        opp.get("completionAttempts", ""),
+    }
 
 
 def fetch_standings():
@@ -125,7 +195,8 @@ def fetch_standings():
     return result
 
 
-def fetch_team_schedule(team_abbr: str, season: int = None):
+def fetch_team_schedule(team_abbr: str, season: int = None, include_box_scores: bool = True):
+    """Fetch full season schedule + box score defensive stats for one team."""
     url = f"{BASE}/teams"
     raw = fetch(url)
     team_id = None
@@ -148,25 +219,50 @@ def fetch_team_schedule(team_abbr: str, season: int = None):
 
     games = []
     for event in raw.get("events", []):
-        comp = event["competitions"][0]
-        home = next((t for t in comp["competitors"] if t["homeAway"] == "home"), {})
-        away = next((t for t in comp["competitors"] if t["homeAway"] == "away"), {})
-        status = event["status"]["type"]
-        games.append({
+        comp = event.get("competitions", [{}])[0]
+        competitors = comp.get("competitors", [])
+        home = next((t for t in competitors if t.get("homeAway") == "home"), {})
+        away = next((t for t in competitors if t.get("homeAway") == "away"), {})
+
+        completed, status_name = parse_status(event)
+
+        home_abbr = home.get("team", {}).get("abbreviation", "").upper()
+        away_abbr = away.get("team", {}).get("abbreviation", "").upper()
+        is_home = home_abbr == team_abbr.upper()
+        opponent_abbr = away_abbr if is_home else home_abbr
+
+        game = {
             "id": event["id"],
             "week": event.get("week", {}).get("number"),
-            "date": event["date"],
-            "completed": status.get("completed", False),
-            "status": status.get("name"),
-            "home_abbr": home.get("team", {}).get("abbreviation"),
-            "away_abbr": away.get("team", {}).get("abbreviation"),
-            "home_score": int(home.get("score", 0) or 0),
-            "away_score": int(away.get("score", 0) or 0),
+            "date": event.get("date", ""),
+            "completed": completed,
+            "status": status_name,
+            "is_home": is_home,
+            "home_abbr": home_abbr,
+            "away_abbr": away_abbr,
+            "home_score": parse_score(home.get("score", 0)),
+            "away_score": parse_score(away.get("score", 0)),
             "home_winner": home.get("winner", False),
             "away_winner": away.get("winner", False),
-        })
+            "opponent": opponent_abbr,
+            "defensive_stats": {},
+        }
 
-    result = {"team": team_abbr, "season": year, "fetched_at": datetime.utcnow().isoformat() + "Z", "games": games}
+        if completed and include_box_scores:
+            print(f"  box score week {game['week']} vs {opponent_abbr}...")
+            teams_info = fetch_game_detail(event["id"])
+            if teams_info:
+                game["defensive_stats"] = parse_defensive_stats(teams_info, team_abbr.upper(), opponent_abbr)
+            time.sleep(0.3)
+
+        games.append(game)
+
+    result = {
+        "team": team_abbr.upper(),
+        "season": year,
+        "fetched_at": datetime.utcnow().isoformat() + "Z",
+        "games": games,
+    }
     save(f"schedule_{team_abbr.lower()}_{year}.json", result)
     return result
 
@@ -210,9 +306,10 @@ if __name__ == "__main__":
     p_all = sub.add_parser("all", help="Fetch all 18 weeks of a season")
     p_all.add_argument("--season", type=int)
 
-    p_team = sub.add_parser("team", help="Fetch a team's full schedule")
+    p_team = sub.add_parser("team", help="Fetch a team schedule + defensive stats")
     p_team.add_argument("abbr")
     p_team.add_argument("--season", type=int)
+    p_team.add_argument("--no-box-scores", action="store_true")
 
     sub.add_parser("standings", help="Fetch current standings only")
     sub.add_parser("index", help="Rebuild local week index")
@@ -231,7 +328,7 @@ if __name__ == "__main__":
         fetch_standings()
         index_weeks()
     elif args.cmd == "team":
-        fetch_team_schedule(args.abbr, season=args.season)
+        fetch_team_schedule(args.abbr, season=args.season, include_box_scores=not args.no_box_scores)
     elif args.cmd == "standings":
         fetch_standings()
     elif args.cmd == "index":

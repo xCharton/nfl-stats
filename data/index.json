@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-05-15T03:55:11.536077Z",
+  "updated_at": "2026-05-15T05:12:49.285651Z",
   "weeks": [
+    {
+      "file": "week_2025_01.json",
+      "season": 2025,
+      "week": 1,
+      "game_count": 16
+    },
     {
       "file": "week_2026_01.json",
       "season": 2026,

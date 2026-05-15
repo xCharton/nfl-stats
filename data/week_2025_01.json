@@ -1,0 +1,439 @@
+{
+  "season": 2025,
+  "week": 1,
+  "fetched_at": "2026-05-15T05:12:49.283123Z",
+  "games": [
+    {
+      "id": "401772510",
+      "name": "Dallas Cowboys at Philadelphia Eagles",
+      "short_name": "DAL @ PHI",
+      "date": "2025-09-05T00:20Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "21",
+        "abbr": "PHI",
+        "name": "Philadelphia Eagles",
+        "score": 24,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+        "color": "06424d"
+      },
+      "away": {
+        "id": "6",
+        "abbr": "DAL",
+        "name": "Dallas Cowboys",
+        "score": 20,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
+        "color": "002a5c"
+      },
+      "venue": "Lincoln Financial Field"
+    },
+    {
+      "id": "401772714",
+      "name": "Kansas City Chiefs at Los Angeles Chargers",
+      "short_name": "KC VS LAC",
+      "date": "2025-09-06T00:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "24",
+        "abbr": "LAC",
+        "name": "Los Angeles Chargers",
+        "score": 27,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
+        "color": "0080c6"
+      },
+      "away": {
+        "id": "12",
+        "abbr": "KC",
+        "name": "Kansas City Chiefs",
+        "score": 21,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+        "color": "e31837"
+      },
+      "venue": "Corinthians Arena"
+    },
+    {
+      "id": "401772830",
+      "name": "Tampa Bay Buccaneers at Atlanta Falcons",
+      "short_name": "TB @ ATL",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "1",
+        "abbr": "ATL",
+        "name": "Atlanta Falcons",
+        "score": 20,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
+        "color": "a71930"
+      },
+      "away": {
+        "id": "27",
+        "abbr": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "score": 23,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png",
+        "color": "bd1c36"
+      },
+      "venue": "Mercedes-Benz Stadium"
+    },
+    {
+      "id": "401772829",
+      "name": "Cincinnati Bengals at Cleveland Browns",
+      "short_name": "CIN @ CLE",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "5",
+        "abbr": "CLE",
+        "name": "Cleveland Browns",
+        "score": 16,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
+        "color": "472a08"
+      },
+      "away": {
+        "id": "4",
+        "abbr": "CIN",
+        "name": "Cincinnati Bengals",
+        "score": 17,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+        "color": "fb4f14"
+      },
+      "venue": "Huntington Bank Field"
+    },
+    {
+      "id": "401772719",
+      "name": "Miami Dolphins at Indianapolis Colts",
+      "short_name": "MIA @ IND",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "11",
+        "abbr": "IND",
+        "name": "Indianapolis Colts",
+        "score": 33,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+        "color": "003b75"
+      },
+      "away": {
+        "id": "15",
+        "abbr": "MIA",
+        "name": "Miami Dolphins",
+        "score": 8,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
+        "color": "008e97"
+      },
+      "venue": "Lucas Oil Stadium"
+    },
+    {
+      "id": "401772720",
+      "name": "Las Vegas Raiders at New England Patriots",
+      "short_name": "LV @ NE",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "17",
+        "abbr": "NE",
+        "name": "New England Patriots",
+        "score": 13,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png",
+        "color": "002a5c"
+      },
+      "away": {
+        "id": "13",
+        "abbr": "LV",
+        "name": "Las Vegas Raiders",
+        "score": 20,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
+        "color": "000000"
+      },
+      "venue": "Gillette Stadium"
+    },
+    {
+      "id": "401772718",
+      "name": "Arizona Cardinals at New Orleans Saints",
+      "short_name": "ARI @ NO",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "18",
+        "abbr": "NO",
+        "name": "New Orleans Saints",
+        "score": 13,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
+        "color": "d3bc8d"
+      },
+      "away": {
+        "id": "22",
+        "abbr": "ARI",
+        "name": "Arizona Cardinals",
+        "score": 20,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
+        "color": "a40227"
+      },
+      "venue": "Caesars Superdome"
+    },
+    {
+      "id": "401772721",
+      "name": "Pittsburgh Steelers at New York Jets",
+      "short_name": "PIT @ NYJ",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "20",
+        "abbr": "NYJ",
+        "name": "New York Jets",
+        "score": 32,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
+        "color": "115740"
+      },
+      "away": {
+        "id": "23",
+        "abbr": "PIT",
+        "name": "Pittsburgh Steelers",
+        "score": 34,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+        "color": "000000"
+      },
+      "venue": "MetLife Stadium"
+    },
+    {
+      "id": "401772827",
+      "name": "New York Giants at Washington Commanders",
+      "short_name": "NYG @ WSH",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "28",
+        "abbr": "WSH",
+        "name": "Washington Commanders",
+        "score": 21,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
+        "color": "5a1414"
+      },
+      "away": {
+        "id": "19",
+        "abbr": "NYG",
+        "name": "New York Giants",
+        "score": 6,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+        "color": "003c7f"
+      },
+      "venue": "Northwest Stadium"
+    },
+    {
+      "id": "401772828",
+      "name": "Carolina Panthers at Jacksonville Jaguars",
+      "short_name": "CAR @ JAX",
+      "date": "2025-09-07T17:00Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "30",
+        "abbr": "JAX",
+        "name": "Jacksonville Jaguars",
+        "score": 26,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+        "color": "007487"
+      },
+      "away": {
+        "id": "29",
+        "abbr": "CAR",
+        "name": "Carolina Panthers",
+        "score": 10,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+        "color": "0085ca"
+      },
+      "venue": "EverBank Stadium"
+    },
+    {
+      "id": "401772832",
+      "name": "Tennessee Titans at Denver Broncos",
+      "short_name": "TEN @ DEN",
+      "date": "2025-09-07T20:05Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "7",
+        "abbr": "DEN",
+        "name": "Denver Broncos",
+        "score": 20,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+        "color": "0a2343"
+      },
+      "away": {
+        "id": "10",
+        "abbr": "TEN",
+        "name": "Tennessee Titans",
+        "score": 12,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
+        "color": "4b92db"
+      },
+      "venue": "Empower Field at Mile High"
+    },
+    {
+      "id": "401772831",
+      "name": "San Francisco 49ers at Seattle Seahawks",
+      "short_name": "SF @ SEA",
+      "date": "2025-09-07T20:05Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "26",
+        "abbr": "SEA",
+        "name": "Seattle Seahawks",
+        "score": 13,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
+        "color": "002a5c"
+      },
+      "away": {
+        "id": "25",
+        "abbr": "SF",
+        "name": "San Francisco 49ers",
+        "score": 17,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
+        "color": "aa0000"
+      },
+      "venue": "Lumen Field"
+    },
+    {
+      "id": "401772722",
+      "name": "Detroit Lions at Green Bay Packers",
+      "short_name": "DET @ GB",
+      "date": "2025-09-07T20:25Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "9",
+        "abbr": "GB",
+        "name": "Green Bay Packers",
+        "score": 27,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+        "color": "204e32"
+      },
+      "away": {
+        "id": "8",
+        "abbr": "DET",
+        "name": "Detroit Lions",
+        "score": 13,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
+        "color": "0076b6"
+      },
+      "venue": "Lambeau Field"
+    },
+    {
+      "id": "401772723",
+      "name": "Houston Texans at Los Angeles Rams",
+      "short_name": "HOU @ LAR",
+      "date": "2025-09-07T20:25Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "14",
+        "abbr": "LAR",
+        "name": "Los Angeles Rams",
+        "score": 14,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+        "color": "003594"
+      },
+      "away": {
+        "id": "34",
+        "abbr": "HOU",
+        "name": "Houston Texans",
+        "score": 9,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+        "color": "00143f"
+      },
+      "venue": "SoFi Stadium"
+    },
+    {
+      "id": "401772918",
+      "name": "Baltimore Ravens at Buffalo Bills",
+      "short_name": "BAL @ BUF",
+      "date": "2025-09-08T00:20Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "2",
+        "abbr": "BUF",
+        "name": "Buffalo Bills",
+        "score": 41,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+        "color": "00338d"
+      },
+      "away": {
+        "id": "33",
+        "abbr": "BAL",
+        "name": "Baltimore Ravens",
+        "score": 40,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+        "color": "29126f"
+      },
+      "venue": "Highmark Stadium (Old)"
+    },
+    {
+      "id": "401772810",
+      "name": "Minnesota Vikings at Chicago Bears",
+      "short_name": "MIN @ CHI",
+      "date": "2025-09-09T00:15Z",
+      "status": "STATUS_FINAL",
+      "completed": true,
+      "home": {
+        "id": "3",
+        "abbr": "CHI",
+        "name": "Chicago Bears",
+        "score": 24,
+        "winner": false,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+        "color": "0b1c3a"
+      },
+      "away": {
+        "id": "16",
+        "abbr": "MIN",
+        "name": "Minnesota Vikings",
+        "score": 27,
+        "winner": true,
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
+        "color": "4f2683"
+      },
+      "venue": "Soldier Field"
+    }
+  ]
+}
