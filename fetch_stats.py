@@ -10,24 +10,12 @@ from datetime import datetime
 from pathlib import Path
 import urllib.request
 
+from fetch_helper import fetch
+
 DATA_DIR = Path(__file__).parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
 BASE = "https://site.api.espn.com/apis/site/v2/sports/football/nfl"
-
-
-def fetch(url: str) -> dict:
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "application/json, text/plain, */*",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Origin": "https://www.espn.com",
-        "Referer": "https://www.espn.com/nfl/",
-    }
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read())
 
 
 def save(name: str, data: dict):
@@ -37,7 +25,6 @@ def save(name: str, data: dict):
 
 
 def parse_score(val):
-    """Handle score returned as string, int, float, or dict like {'value': 24}."""
     if isinstance(val, dict):
         val = val.get("value", val.get("displayValue", 0))
     try:
@@ -46,10 +33,8 @@ def parse_score(val):
         return 0
 
 
-def parse_status(event: dict) -> tuple[bool, str]:
-    """Return (completed, status_name) handling varied ESPN status shapes."""
+def parse_status(event: dict) -> tuple:
     s = event.get("status", {})
-    # Some endpoints nest under "type"
     if "type" in s and isinstance(s["type"], dict):
         s = s["type"]
     completed = bool(s.get("completed", False))
@@ -120,7 +105,6 @@ def fetch_scoreboard(week: int = None, season: int = None):
 
 
 def fetch_game_detail(game_id: str) -> dict:
-    """Fetch box score for a single game. Returns per-team stats dict keyed by abbreviation."""
     url = f"{BASE}/summary?event={game_id}"
     try:
         raw = fetch(url)
@@ -140,7 +124,6 @@ def fetch_game_detail(game_id: str) -> dict:
 
 
 def parse_defensive_stats(teams_info: dict, team_abbr: str, opponent_abbr: str) -> dict:
-    """Opponent's offensive stats = our defensive stats allowed."""
     opp = teams_info.get(opponent_abbr.upper(), {}).get("stats", {})
     our = teams_info.get(team_abbr.upper(), {}).get("stats", {})
 
@@ -160,6 +143,7 @@ def parse_defensive_stats(teams_info: dict, team_abbr: str, opponent_abbr: str) 
         "pass_yards_allowed":      safe_int(opp.get("passingYards") or opp.get("netPassingYards")),
         "rush_yards_allowed":      safe_int(opp.get("rushingYards")),
         "receiving_yards_allowed": safe_int(opp.get("passingYards") or opp.get("netPassingYards")),
+        "total_yards_allowed":     safe_int(opp.get("totalYards")),
         "rush_td_allowed":         safe_int(opp.get("rushingTouchdowns")),
         "receiving_td_allowed":    safe_int(opp.get("passingTouchdowns")),
         "opp_comp_pct":            safe_float(opp.get("completionPct")),
@@ -204,7 +188,6 @@ def fetch_standings():
 
 
 def fetch_team_schedule(team_abbr: str, season: int = None, include_box_scores: bool = True):
-    """Fetch full season schedule + box score defensive stats for one team."""
     url = f"{BASE}/teams"
     raw = fetch(url)
     team_id = None
@@ -239,6 +222,12 @@ def fetch_team_schedule(team_abbr: str, season: int = None, include_box_scores: 
         is_home = home_abbr == team_abbr.upper()
         opponent_abbr = away_abbr if is_home else home_abbr
 
+        home_score = parse_score(home.get("score", 0))
+        away_score = parse_score(away.get("score", 0))
+
+        if not completed and (home_score > 0 or away_score > 0):
+            completed = True
+
         game = {
             "id": event["id"],
             "week": event.get("week", {}).get("number"),
@@ -248,8 +237,8 @@ def fetch_team_schedule(team_abbr: str, season: int = None, include_box_scores: 
             "is_home": is_home,
             "home_abbr": home_abbr,
             "away_abbr": away_abbr,
-            "home_score": parse_score(home.get("score", 0)),
-            "away_score": parse_score(away.get("score", 0)),
+            "home_score": home_score,
+            "away_score": away_score,
             "home_winner": home.get("winner", False),
             "away_winner": away.get("winner", False),
             "opponent": opponent_abbr,
