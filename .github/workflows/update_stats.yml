@@ -26,10 +26,10 @@ jobs:
         run: pip install requests
 
       - name: Fetch scoreboard + standings
-        run: python fetch_stats.py current
+        run: python fetch_stats.py current || echo "ESPN blocked this request - fetch manually from Mac"
 
       - name: Fetch all 32 teams + box scores
-        run: python update_all_teams.py ${{ github.event.inputs.season }}
+        run: python update_all_teams.py ${{ github.event.inputs.season }} || echo "ESPN blocked - fetch manually from Mac"
 
       - name: Commit updated data
         run: |
