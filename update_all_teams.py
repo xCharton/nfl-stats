@@ -9,9 +9,10 @@ Run by GitHub Actions every Tuesday, or manually:
 import json
 import sys
 import time
-import urllib.request
 from datetime import datetime
 from pathlib import Path
+
+from fetch_helper import fetch
 
 DATA_DIR = Path(__file__).parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
@@ -24,20 +25,6 @@ ALL_TEAMS = [
     "LAC", "LAR", "LV",  "MIA", "MIN", "NE",  "NO",  "NYG",
     "NYJ", "PHI", "PIT", "SEA", "SF",  "TB",  "TEN", "WSH",
 ]
-
-
-def fetch(url):
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "application/json, text/plain, */*",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Origin": "https://www.espn.com",
-        "Referer": "https://www.espn.com/nfl/",
-    }
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read())
 
 
 def parse_score(val):
@@ -69,7 +56,7 @@ def get_team_id(team_abbr):
     return None
 
 
-def fetch_box_score(game_id, team_abbr, opponent_abbr):
+def fetch_box_score(game_id, opponent_abbr):
     try:
         raw = fetch(f"{BASE}/summary?event={game_id}")
         teams_info = {}
@@ -121,7 +108,6 @@ def fetch_team(team_abbr, season):
         print(f"  {team_abbr}: schedule fetch failed — {e}")
         return
 
-    # Load existing data so we don't re-fetch box scores we already have
     out_path = DATA_DIR / f"schedule_{team_abbr.lower()}_{season}.json"
     existing = {}
     if out_path.exists():
@@ -148,7 +134,6 @@ def fetch_team(team_abbr, season):
         home_score = parse_score(home.get("score", 0))
         away_score = parse_score(away.get("score", 0))
 
-        # Fix completed flag if scores exist
         if not completed and (home_score > 0 or away_score > 0):
             completed = True
 
@@ -172,17 +157,16 @@ def fetch_team(team_abbr, season):
         }
 
         if completed:
-            # Re-use existing box score if we already have it
             if event["id"] in existing and existing[event["id"]]:
                 game["defensive_stats"] = existing[event["id"]]
                 game["defensive_stats"]["points_allowed"] = points_allowed
             else:
                 print(f"    wk {game['week']} vs {opponent_abbr} — fetching box score...")
-                ds = fetch_box_score(event["id"], team_abbr, opponent_abbr)
+                ds = fetch_box_score(event["id"], opponent_abbr)
                 if ds:
                     ds["points_allowed"] = points_allowed
                 game["defensive_stats"] = ds
-                time.sleep(0.3)
+                time.sleep(0.5)
 
         games.append(game)
 
