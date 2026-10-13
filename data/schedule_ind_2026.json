@@ -1,7 +1,7 @@
 {
   "team": "IND",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:12.900013Z",
+  "fetched_at": "2026-10-13T13:48:14.686092Z",
   "games": [
     {
       "id": "401872659",
@@ -115,17 +115,28 @@
       "id": "401872985",
       "week": 5,
       "date": "2026-10-11T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "PIT",
       "away_abbr": "IND",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 34,
+      "away_score": 22,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "PIT",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 225,
+        "rush_yards_allowed": 127,
+        "receiving_yards_allowed": 225,
+        "total_yards_allowed": 352,
+        "opp_comp_pct": 71.0,
+        "opp_passing_line": "22/31",
+        "interceptions": 0,
+        "third_down_eff": "4-11",
+        "possession_time": "28:00",
+        "points_allowed": 34
+      }
     },
     {
       "id": "401873003",

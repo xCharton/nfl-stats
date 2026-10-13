@@ -1,7 +1,7 @@
 {
   "team": "DEN",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:00.103815Z",
+  "fetched_at": "2026-10-13T13:48:11.502284Z",
   "games": [
     {
       "id": "401872931",
@@ -115,17 +115,28 @@
       "id": "401872989",
       "week": 5,
       "date": "2026-10-11T20:05Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "LAC",
       "away_abbr": "DEN",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 17,
+      "away_score": 23,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "LAC",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 82,
+        "rush_yards_allowed": 155,
+        "receiving_yards_allowed": 82,
+        "total_yards_allowed": 237,
+        "opp_comp_pct": 58.3,
+        "opp_passing_line": "14/24",
+        "interceptions": 1,
+        "third_down_eff": "5-14",
+        "possession_time": "30:53",
+        "points_allowed": 17
+      }
     },
     {
       "id": "401872995",

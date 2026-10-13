@@ -1,7 +1,7 @@
 {
   "team": "DET",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:03.207671Z",
+  "fetched_at": "2026-10-13T13:48:12.274256Z",
   "games": [
     {
       "id": "401872923",
@@ -115,17 +115,28 @@
       "id": "401872991",
       "week": 5,
       "date": "2026-10-11T20:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "ARI",
       "away_abbr": "DET",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 21,
+      "away_score": 45,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "ARI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 271,
+        "rush_yards_allowed": 56,
+        "receiving_yards_allowed": 271,
+        "total_yards_allowed": 327,
+        "opp_comp_pct": 62.5,
+        "opp_passing_line": "30/48",
+        "interceptions": 1,
+        "third_down_eff": "8-18",
+        "possession_time": "30:11",
+        "points_allowed": 21
+      }
     },
     {
       "id": "401873020",

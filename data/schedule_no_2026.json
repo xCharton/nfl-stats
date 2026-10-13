@@ -1,7 +1,7 @@
 {
   "team": "NO",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:40.034111Z",
+  "fetched_at": "2026-10-13T13:48:20.821909Z",
   "games": [
     {
       "id": "401872923",
@@ -115,17 +115,28 @@
       "id": "401872987",
       "week": 5,
       "date": "2026-10-11T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "NO",
       "away_abbr": "MIN",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 13,
+      "away_score": 23,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "MIN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 211,
+        "rush_yards_allowed": 153,
+        "receiving_yards_allowed": 211,
+        "total_yards_allowed": 364,
+        "opp_comp_pct": 80.0,
+        "opp_passing_line": "24/30",
+        "interceptions": 0,
+        "third_down_eff": "9-18",
+        "possession_time": "39:37",
+        "points_allowed": 23
+      }
     },
     {
       "id": "401873000",

@@ -1,7 +1,7 @@
 {
   "team": "SF",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:58.250551Z",
+  "fetched_at": "2026-10-13T13:48:25.513409Z",
   "games": [
     {
       "id": "401872657",
@@ -115,17 +115,28 @@
       "id": "401872992",
       "week": 5,
       "date": "2026-10-11T20:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "SEA",
       "away_abbr": "SF",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 29,
+      "away_score": 32,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "SEA",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 162,
+        "rush_yards_allowed": 89,
+        "receiving_yards_allowed": 162,
+        "total_yards_allowed": 251,
+        "opp_comp_pct": 62.1,
+        "opp_passing_line": "18/29",
+        "interceptions": 2,
+        "third_down_eff": "3-12",
+        "possession_time": "30:58",
+        "points_allowed": 29
+      }
     },
     {
       "id": "401873008",

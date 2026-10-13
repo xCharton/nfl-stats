@@ -1,7 +1,7 @@
 {
   "team": "NYG",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:43.215797Z",
+  "fetched_at": "2026-10-13T13:48:21.595575Z",
   "games": [
     {
       "id": "401872930",
@@ -115,17 +115,28 @@
       "id": "401872988",
       "week": 5,
       "date": "2026-10-11T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "WSH",
       "away_abbr": "NYG",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 27,
+      "away_score": 27,
       "home_winner": false,
       "away_winner": false,
       "opponent": "WSH",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 176,
+        "rush_yards_allowed": 202,
+        "receiving_yards_allowed": 176,
+        "total_yards_allowed": 378,
+        "opp_comp_pct": 68.0,
+        "opp_passing_line": "17/25",
+        "interceptions": 0,
+        "third_down_eff": "4-12",
+        "possession_time": "30:35",
+        "points_allowed": 27
+      }
     },
     {
       "id": "401873000",

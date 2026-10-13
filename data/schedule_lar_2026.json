@@ -1,7 +1,7 @@
 {
   "team": "LAR",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:25.210798Z",
+  "fetched_at": "2026-10-13T13:48:17.081620Z",
   "games": [
     {
       "id": "401872657",
@@ -115,17 +115,28 @@
       "id": "401872994",
       "week": 5,
       "date": "2026-10-13T00:15Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "LAR",
       "away_abbr": "BUF",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 34,
+      "away_score": 37,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "BUF",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 202,
+        "rush_yards_allowed": 234,
+        "receiving_yards_allowed": 202,
+        "total_yards_allowed": 436,
+        "opp_comp_pct": 63.2,
+        "opp_passing_line": "12/19",
+        "interceptions": 1,
+        "third_down_eff": "2-7",
+        "possession_time": "30:08",
+        "points_allowed": 37
+      }
     },
     {
       "id": "401873004",

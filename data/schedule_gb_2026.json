@@ -1,7 +1,7 @@
 {
   "team": "GB",
   "season": 2026,
-  "fetched_at": "2026-10-06T13:00:06.434000Z",
+  "fetched_at": "2026-10-13T13:48:12.979190Z",
   "games": [
     {
       "id": "401872927",
@@ -115,17 +115,28 @@
       "id": "401872990",
       "week": 5,
       "date": "2026-10-11T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "GB",
       "away_abbr": "CHI",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 31,
+      "away_score": 7,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "CHI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 165,
+        "rush_yards_allowed": 81,
+        "receiving_yards_allowed": 165,
+        "total_yards_allowed": 246,
+        "opp_comp_pct": 57.5,
+        "opp_passing_line": "23/40",
+        "interceptions": 3,
+        "third_down_eff": "4-14",
+        "possession_time": "29:36",
+        "points_allowed": 7
+      }
     },
     {
       "id": "401873007",
