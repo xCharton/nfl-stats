@@ -1,7 +1,7 @@
 {
   "team": "JAX",
   "season": 2026,
-  "fetched_at": "2026-10-13T13:48:15.445812Z",
+  "fetched_at": "2026-10-20T11:06:43.957246Z",
   "games": [
     {
       "id": "401872922",
@@ -142,17 +142,28 @@
       "id": "401872996",
       "week": 6,
       "date": "2026-10-18T13:30Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "JAX",
       "away_abbr": "HOU",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 31,
+      "away_score": 34,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "HOU",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 312,
+        "rush_yards_allowed": 114,
+        "receiving_yards_allowed": 312,
+        "total_yards_allowed": 426,
+        "opp_comp_pct": 70.6,
+        "opp_passing_line": "24/34",
+        "interceptions": 1,
+        "third_down_eff": "5-11",
+        "possession_time": "29:37",
+        "points_allowed": 34
+      }
     },
     {
       "id": "401873028",

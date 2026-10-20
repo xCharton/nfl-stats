@@ -1,7 +1,7 @@
 {
   "team": "ARI",
   "season": 2026,
-  "fetched_at": "2026-10-13T13:48:04.625714Z",
+  "fetched_at": "2026-10-20T11:06:33.122973Z",
   "games": [
     {
       "id": "401872926",
@@ -142,17 +142,28 @@
       "id": "401873004",
       "week": 6,
       "date": "2026-10-18T20:05Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "LAR",
       "away_abbr": "ARI",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 16,
+      "away_score": 18,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "LAR",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 194,
+        "rush_yards_allowed": 92,
+        "receiving_yards_allowed": 194,
+        "total_yards_allowed": 286,
+        "opp_comp_pct": 75.8,
+        "opp_passing_line": "25/33",
+        "interceptions": 0,
+        "third_down_eff": "4-10",
+        "possession_time": "25:08",
+        "points_allowed": 16
+      }
     },
     {
       "id": "401873019",

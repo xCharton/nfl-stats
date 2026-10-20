@@ -1,7 +1,7 @@
 {
   "team": "NYJ",
   "season": 2026,
-  "fetched_at": "2026-10-13T13:48:22.328181Z",
+  "fetched_at": "2026-10-20T11:06:50.635078Z",
   "games": [
     {
       "id": "401872924",
@@ -142,17 +142,28 @@
       "id": "401873001",
       "week": 6,
       "date": "2026-10-18T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "NE",
       "away_abbr": "NYJ",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 26,
+      "away_score": 19,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "NE",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 235,
+        "rush_yards_allowed": 148,
+        "receiving_yards_allowed": 235,
+        "total_yards_allowed": 383,
+        "opp_comp_pct": 56.2,
+        "opp_passing_line": "18/32",
+        "interceptions": 0,
+        "third_down_eff": "8-15",
+        "possession_time": "29:57",
+        "points_allowed": 26
+      }
     },
     {
       "id": "401873015",

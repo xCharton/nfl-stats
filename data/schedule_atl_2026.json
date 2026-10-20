@@ -1,7 +1,7 @@
 {
   "team": "ATL",
   "season": 2026,
-  "fetched_at": "2026-10-13T13:48:05.424162Z",
+  "fetched_at": "2026-10-20T11:06:33.891658Z",
   "games": [
     {
       "id": "401872658",
@@ -142,17 +142,28 @@
       "id": "401872999",
       "week": 6,
       "date": "2026-10-18T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "ATL",
       "away_abbr": "CHI",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 23,
+      "away_score": 31,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "CHI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 270,
+        "rush_yards_allowed": 98,
+        "receiving_yards_allowed": 270,
+        "total_yards_allowed": 368,
+        "opp_comp_pct": 83.3,
+        "opp_passing_line": "30/36",
+        "interceptions": 0,
+        "third_down_eff": "9-17",
+        "possession_time": "40:08",
+        "points_allowed": 31
+      }
     },
     {
       "id": "401873017",

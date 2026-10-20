@@ -1,7 +1,7 @@
 {
   "team": "SEA",
   "season": 2026,
-  "fetched_at": "2026-10-13T13:48:24.777124Z",
+  "fetched_at": "2026-10-20T11:06:53.002351Z",
   "games": [
     {
       "id": "401872656",
@@ -142,17 +142,28 @@
       "id": "401872995",
       "week": 6,
       "date": "2026-10-16T00:15Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "DEN",
       "away_abbr": "SEA",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 17,
+      "away_score": 14,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "DEN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 94,
+        "rush_yards_allowed": 74,
+        "receiving_yards_allowed": 94,
+        "total_yards_allowed": 168,
+        "opp_comp_pct": 63.0,
+        "opp_passing_line": "17/27",
+        "interceptions": 0,
+        "third_down_eff": "3-14",
+        "possession_time": "29:29",
+        "points_allowed": 17
+      }
     },
     {
       "id": "401873022",

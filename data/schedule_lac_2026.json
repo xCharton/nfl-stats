@@ -1,7 +1,7 @@
 {
   "team": "LAC",
   "season": 2026,
-  "fetched_at": "2026-10-13T13:48:16.329017Z",
+  "fetched_at": "2026-10-20T11:06:45.823273Z",
   "games": [
     {
       "id": "401872926",
@@ -142,17 +142,28 @@
       "id": "401873006",
       "week": 6,
       "date": "2026-10-18T20:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "KC",
       "away_abbr": "LAC",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 22,
+      "away_score": 6,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "KC",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 272,
+        "rush_yards_allowed": 150,
+        "receiving_yards_allowed": 272,
+        "total_yards_allowed": 422,
+        "opp_comp_pct": 76.7,
+        "opp_passing_line": "23/30",
+        "interceptions": 1,
+        "third_down_eff": "3-10",
+        "possession_time": "30:26",
+        "points_allowed": 22
+      }
     },
     {
       "id": "401873032",
