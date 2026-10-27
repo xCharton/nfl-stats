@@ -1,7 +1,7 @@
 {
   "team": "DAL",
   "season": 2026,
-  "fetched_at": "2026-10-20T11:06:39.669757Z",
+  "fetched_at": "2026-10-27T11:47:09.450263Z",
   "games": [
     {
       "id": "401872930",
@@ -169,17 +169,28 @@
       "id": "401873009",
       "week": 7,
       "date": "2026-10-27T00:15Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "PHI",
       "away_abbr": "DAL",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 21,
+      "away_score": 38,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "PHI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 200,
+        "rush_yards_allowed": 121,
+        "receiving_yards_allowed": 200,
+        "total_yards_allowed": 321,
+        "opp_comp_pct": 65.7,
+        "opp_passing_line": "23/35",
+        "interceptions": 1,
+        "third_down_eff": "5-12",
+        "possession_time": "29:21",
+        "points_allowed": 21
+      }
     },
     {
       "id": "401873024",

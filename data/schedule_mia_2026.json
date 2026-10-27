@@ -1,7 +1,7 @@
 {
   "team": "MIA",
   "season": 2026,
-  "fetched_at": "2026-10-20T11:06:47.399570Z",
+  "fetched_at": "2026-10-27T11:47:16.244558Z",
   "games": [
     {
       "id": "401872928",
@@ -142,17 +142,28 @@
       "id": "401873015",
       "week": 7,
       "date": "2026-10-25T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "NYJ",
       "away_abbr": "MIA",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 25,
+      "away_score": 28,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "NYJ",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 269,
+        "rush_yards_allowed": 108,
+        "receiving_yards_allowed": 269,
+        "total_yards_allowed": 377,
+        "opp_comp_pct": 76.7,
+        "opp_passing_line": "23/30",
+        "interceptions": 1,
+        "third_down_eff": "7-13",
+        "possession_time": "25:24",
+        "points_allowed": 25
+      }
     },
     {
       "id": "401873034",

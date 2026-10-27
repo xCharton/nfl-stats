@@ -1,7 +1,7 @@
 {
   "team": "CLE",
   "season": 2026,
-  "fetched_at": "2026-10-20T11:06:38.871655Z",
+  "fetched_at": "2026-10-27T11:47:08.752858Z",
   "games": [
     {
       "id": "401872922",
@@ -169,17 +169,28 @@
       "id": "401873013",
       "week": 7,
       "date": "2026-10-25T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "TEN",
       "away_abbr": "CLE",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 24,
+      "away_score": 27,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "TEN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 181,
+        "rush_yards_allowed": 141,
+        "receiving_yards_allowed": 181,
+        "total_yards_allowed": 322,
+        "opp_comp_pct": 64.5,
+        "opp_passing_line": "20/31",
+        "interceptions": 1,
+        "third_down_eff": "5-13",
+        "possession_time": "28:46",
+        "points_allowed": 24
+      }
     },
     {
       "id": "401873027",

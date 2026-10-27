@@ -1,7 +1,7 @@
 {
   "team": "SEA",
   "season": 2026,
-  "fetched_at": "2026-10-20T11:06:53.002351Z",
+  "fetched_at": "2026-10-27T11:47:21.938029Z",
   "games": [
     {
       "id": "401872656",
@@ -169,17 +169,28 @@
       "id": "401873022",
       "week": 7,
       "date": "2026-10-26T00:20Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "SEA",
       "away_abbr": "KC",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 20,
+      "away_score": 3,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "KC",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 163,
+        "rush_yards_allowed": 50,
+        "receiving_yards_allowed": 163,
+        "total_yards_allowed": 213,
+        "opp_comp_pct": 57.6,
+        "opp_passing_line": "19/33",
+        "interceptions": 1,
+        "third_down_eff": "3-11",
+        "possession_time": "24:09",
+        "points_allowed": 3
+      }
     },
     {
       "id": "401873036",

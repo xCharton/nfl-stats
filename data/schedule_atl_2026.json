@@ -1,7 +1,7 @@
 {
   "team": "ATL",
   "season": 2026,
-  "fetched_at": "2026-10-20T11:06:33.891658Z",
+  "fetched_at": "2026-10-27T11:47:04.966715Z",
   "games": [
     {
       "id": "401872658",
@@ -169,17 +169,28 @@
       "id": "401873017",
       "week": 7,
       "date": "2026-10-25T17:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "ATL",
       "away_abbr": "SF",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 29,
+      "away_score": 20,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "SF",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 277,
+        "rush_yards_allowed": 123,
+        "receiving_yards_allowed": 277,
+        "total_yards_allowed": 400,
+        "opp_comp_pct": 67.5,
+        "opp_passing_line": "27/40",
+        "interceptions": 2,
+        "third_down_eff": "4-10",
+        "possession_time": "29:13",
+        "points_allowed": 20
+      }
     },
     {
       "id": "401873025",
