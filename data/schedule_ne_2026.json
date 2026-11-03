@@ -1,7 +1,7 @@
 {
   "team": "NE",
   "season": 2026,
-  "fetched_at": "2026-10-27T11:47:17.665481Z",
+  "fetched_at": "2026-11-03T13:49:38.337255Z",
   "games": [
     {
       "id": "401872656",
@@ -196,17 +196,28 @@
       "id": "401873034",
       "week": 8,
       "date": "2026-11-01T21:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "MIA",
       "away_abbr": "NE",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 19,
+      "away_score": 24,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "MIA",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 195,
+        "rush_yards_allowed": 74,
+        "receiving_yards_allowed": 195,
+        "total_yards_allowed": 269,
+        "opp_comp_pct": 65.6,
+        "opp_passing_line": "21/32",
+        "interceptions": 1,
+        "third_down_eff": "7-14",
+        "possession_time": "28:03",
+        "points_allowed": 19
+      }
     },
     {
       "id": "401873049",

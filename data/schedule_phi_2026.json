@@ -1,7 +1,7 @@
 {
   "team": "PHI",
   "season": 2026,
-  "fetched_at": "2026-10-27T11:47:20.465128Z",
+  "fetched_at": "2026-11-03T13:49:40.621640Z",
   "games": [
     {
       "id": "401872929",
@@ -196,17 +196,28 @@
       "id": "401873035",
       "week": 8,
       "date": "2026-11-02T01:20Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "WSH",
       "away_abbr": "PHI",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 27,
+      "away_score": 10,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "WSH",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 204,
+        "rush_yards_allowed": 135,
+        "receiving_yards_allowed": 204,
+        "total_yards_allowed": 339,
+        "opp_comp_pct": 55.2,
+        "opp_passing_line": "16/29",
+        "interceptions": 0,
+        "third_down_eff": "5-13",
+        "possession_time": "26:29",
+        "points_allowed": 27
+      }
     },
     {
       "id": "401873044",

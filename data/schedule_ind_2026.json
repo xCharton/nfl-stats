@@ -1,7 +1,7 @@
 {
   "team": "IND",
   "season": 2026,
-  "fetched_at": "2026-10-27T11:47:13.044857Z",
+  "fetched_at": "2026-11-03T13:49:30.742226Z",
   "games": [
     {
       "id": "401872659",
@@ -196,17 +196,28 @@
       "id": "401873028",
       "week": 8,
       "date": "2026-11-01T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "JAX",
       "away_abbr": "IND",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 42,
+      "away_score": 7,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "JAX",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 183,
+        "rush_yards_allowed": 183,
+        "receiving_yards_allowed": 183,
+        "total_yards_allowed": 366,
+        "opp_comp_pct": 64.7,
+        "opp_passing_line": "11/17",
+        "interceptions": 0,
+        "third_down_eff": "6-12",
+        "possession_time": "29:38",
+        "points_allowed": 42
+      }
     },
     {
       "id": "401873040",

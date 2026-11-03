@@ -1,7 +1,7 @@
 {
   "team": "LV",
   "season": 2026,
-  "fetched_at": "2026-10-27T11:47:15.563707Z",
+  "fetched_at": "2026-11-03T13:49:35.648049Z",
   "games": [
     {
       "id": "401872928",
@@ -196,17 +196,28 @@
       "id": "401873029",
       "week": 8,
       "date": "2026-11-01T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "NYJ",
       "away_abbr": "LV",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 33,
+      "away_score": 38,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "NYJ",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 273,
+        "rush_yards_allowed": 166,
+        "receiving_yards_allowed": 273,
+        "total_yards_allowed": 439,
+        "opp_comp_pct": 62.5,
+        "opp_passing_line": "20/32",
+        "interceptions": 1,
+        "third_down_eff": "4-11",
+        "possession_time": "30:02",
+        "points_allowed": 33
+      }
     },
     {
       "id": "401873047",
