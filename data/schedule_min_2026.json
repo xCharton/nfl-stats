@@ -1,7 +1,7 @@
 {
   "team": "MIN",
   "season": 2026,
-  "fetched_at": "2026-11-03T13:49:37.427266Z",
+  "fetched_at": "2026-11-10T14:31:40.428332Z",
   "games": [
     {
       "id": "401872927",
@@ -196,17 +196,28 @@
       "id": "401873051",
       "week": 9,
       "date": "2026-11-10T01:15Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "MIN",
       "away_abbr": "BUF",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 6,
+      "away_score": 23,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "BUF",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 205,
+        "rush_yards_allowed": 134,
+        "receiving_yards_allowed": 205,
+        "total_yards_allowed": 339,
+        "opp_comp_pct": 67.7,
+        "opp_passing_line": "21/31",
+        "interceptions": 1,
+        "third_down_eff": "7-18",
+        "possession_time": "42:32",
+        "points_allowed": 23
+      }
     },
     {
       "id": "401873060",

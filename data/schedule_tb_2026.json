@@ -1,7 +1,7 @@
 {
   "team": "TB",
   "season": 2026,
-  "fetched_at": "2026-11-03T13:49:43.579097Z",
+  "fetched_at": "2026-11-10T14:31:48.374289Z",
   "games": [
     {
       "id": "401872925",
@@ -223,17 +223,28 @@
       "id": "401873050",
       "week": 9,
       "date": "2026-11-09T01:20Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "CHI",
       "away_abbr": "TB",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 27,
+      "away_score": 24,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "CHI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 277,
+        "rush_yards_allowed": 72,
+        "receiving_yards_allowed": 277,
+        "total_yards_allowed": 349,
+        "opp_comp_pct": 59.5,
+        "opp_passing_line": "22/37",
+        "interceptions": 4,
+        "third_down_eff": "7-13",
+        "possession_time": "27:08",
+        "points_allowed": 27
+      }
     },
     {
       "id": "401873072",

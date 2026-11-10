@@ -1,7 +1,7 @@
 {
   "team": "PIT",
   "season": 2026,
-  "fetched_at": "2026-11-03T13:49:41.436563Z",
+  "fetched_at": "2026-11-10T14:31:45.473833Z",
   "games": [
     {
       "id": "401872658",
@@ -238,7 +238,7 @@
     {
       "id": "401873076",
       "week": 11,
-      "date": "2026-11-22T21:25Z",
+      "date": "2026-11-22T18:00Z",
       "completed": false,
       "status": "Scheduled",
       "is_home": false,

@@ -1,7 +1,7 @@
 {
   "team": "LAR",
   "season": 2026,
-  "fetched_at": "2026-11-03T13:49:34.641337Z",
+  "fetched_at": "2026-11-10T14:31:38.232291Z",
   "games": [
     {
       "id": "401872657",
@@ -223,17 +223,28 @@
       "id": "401873043",
       "week": 9,
       "date": "2026-11-08T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "WSH",
       "away_abbr": "LAR",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 13,
+      "away_score": 20,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "WSH",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 253,
+        "rush_yards_allowed": 60,
+        "receiving_yards_allowed": 253,
+        "total_yards_allowed": 313,
+        "opp_comp_pct": 68.6,
+        "opp_passing_line": "24/35",
+        "interceptions": 0,
+        "third_down_eff": "3-12",
+        "possession_time": "28:08",
+        "points_allowed": 13
+      }
     },
     {
       "id": "401873061",
