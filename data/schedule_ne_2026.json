@@ -1,7 +1,7 @@
 {
   "team": "NE",
   "season": 2026,
-  "fetched_at": "2026-11-10T14:31:41.533638Z",
+  "fetched_at": "2026-11-17T15:40:21.124216Z",
   "games": [
     {
       "id": "401872656",
@@ -250,17 +250,28 @@
       "id": "401873053",
       "week": 10,
       "date": "2026-11-15T14:30Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "DET",
       "away_abbr": "NE",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 35,
+      "away_score": 10,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "DET",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 303,
+        "rush_yards_allowed": 191,
+        "receiving_yards_allowed": 303,
+        "total_yards_allowed": 494,
+        "opp_comp_pct": 65.6,
+        "opp_passing_line": "21/32",
+        "interceptions": 2,
+        "third_down_eff": "8-15",
+        "possession_time": "32:57",
+        "points_allowed": 35
+      }
     },
     {
       "id": "401873093",

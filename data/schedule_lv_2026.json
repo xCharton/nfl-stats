@@ -1,7 +1,7 @@
 {
   "team": "LV",
   "season": 2026,
-  "fetched_at": "2026-11-10T14:31:38.954584Z",
+  "fetched_at": "2026-11-17T15:40:18.824061Z",
   "games": [
     {
       "id": "401872928",
@@ -250,17 +250,28 @@
       "id": "401873062",
       "week": 10,
       "date": "2026-11-15T21:05Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "LV",
       "away_abbr": "SEA",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 13,
+      "away_score": 21,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "SEA",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 232,
+        "rush_yards_allowed": 150,
+        "receiving_yards_allowed": 232,
+        "total_yards_allowed": 382,
+        "opp_comp_pct": 82.4,
+        "opp_passing_line": "14/17",
+        "interceptions": 0,
+        "third_down_eff": "7-12",
+        "possession_time": "31:41",
+        "points_allowed": 21
+      }
     },
     {
       "id": "401873075",

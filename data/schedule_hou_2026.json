@@ -1,7 +1,7 @@
 {
   "team": "HOU",
   "season": 2026,
-  "fetched_at": "2026-11-10T14:31:33.958034Z",
+  "fetched_at": "2026-11-17T15:40:14.201385Z",
   "games": [
     {
       "id": "401872660",
@@ -223,17 +223,28 @@
       "id": "401873056",
       "week": 10,
       "date": "2026-11-15T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "CLE",
       "away_abbr": "HOU",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 27,
+      "away_score": 24,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "CLE",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 280,
+        "rush_yards_allowed": 99,
+        "receiving_yards_allowed": 280,
+        "total_yards_allowed": 379,
+        "opp_comp_pct": 62.5,
+        "opp_passing_line": "25/40",
+        "interceptions": 1,
+        "third_down_eff": "7-15",
+        "possession_time": "30:22",
+        "points_allowed": 27
+      }
     },
     {
       "id": "401873066",

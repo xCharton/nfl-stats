@@ -1,7 +1,7 @@
 {
   "team": "CIN",
   "season": 2026,
-  "fetched_at": "2026-11-10T14:31:29.202023Z",
+  "fetched_at": "2026-11-17T15:40:10.160800Z",
   "games": [
     {
       "id": "401872925",
@@ -223,17 +223,28 @@
       "id": "401873064",
       "week": 10,
       "date": "2026-11-16T01:20Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "CIN",
       "away_abbr": "PIT",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 38,
+      "away_score": 18,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "PIT",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 120,
+        "rush_yards_allowed": 102,
+        "receiving_yards_allowed": 120,
+        "total_yards_allowed": 222,
+        "opp_comp_pct": 50.0,
+        "opp_passing_line": "16/32",
+        "interceptions": 0,
+        "third_down_eff": "5-13",
+        "possession_time": "24:51",
+        "points_allowed": 18
+      }
     },
     {
       "id": "401873078",

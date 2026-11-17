@@ -1,7 +1,7 @@
 {
   "team": "SF",
   "season": 2026,
-  "fetched_at": "2026-11-10T14:31:47.546674Z",
+  "fetched_at": "2026-11-17T15:40:26.000627Z",
   "games": [
     {
       "id": "401872657",
@@ -223,17 +223,28 @@
       "id": "401873063",
       "week": 10,
       "date": "2026-11-15T21:25Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": false,
       "home_abbr": "DAL",
       "away_abbr": "SF",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 40,
+      "away_score": 46,
       "home_winner": false,
-      "away_winner": false,
+      "away_winner": true,
       "opponent": "DAL",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 343,
+        "rush_yards_allowed": 96,
+        "receiving_yards_allowed": 343,
+        "total_yards_allowed": 439,
+        "opp_comp_pct": 58.8,
+        "opp_passing_line": "30/51",
+        "interceptions": 1,
+        "third_down_eff": "7-16",
+        "possession_time": "28:13",
+        "points_allowed": 40
+      }
     },
     {
       "id": "401873077",
