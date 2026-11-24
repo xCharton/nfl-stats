@@ -1,7 +1,7 @@
 {
   "team": "BUF",
   "season": 2026,
-  "fetched_at": "2026-11-17T15:40:08.358667Z",
+  "fetched_at": "2026-11-24T17:09:56.667964Z",
   "games": [
     {
       "id": "401872660",
@@ -250,17 +250,28 @@
       "id": "401873070",
       "week": 11,
       "date": "2026-11-22T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "BUF",
       "away_abbr": "MIA",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 26,
+      "away_score": 9,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "MIA",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 86,
+        "rush_yards_allowed": 99,
+        "receiving_yards_allowed": 86,
+        "total_yards_allowed": 185,
+        "opp_comp_pct": 36.4,
+        "opp_passing_line": "12/33",
+        "interceptions": 1,
+        "third_down_eff": "2-14",
+        "possession_time": "23:15",
+        "points_allowed": 9
+      }
     },
     {
       "id": "401873082",

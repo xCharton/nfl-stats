@@ -1,7 +1,7 @@
 {
   "team": "CLE",
   "season": 2026,
-  "fetched_at": "2026-11-17T15:40:10.977615Z",
+  "fetched_at": "2026-11-24T17:09:58.945063Z",
   "games": [
     {
       "id": "401872922",
@@ -276,7 +276,7 @@
     {
       "id": "401873086",
       "week": 12,
-      "date": "2026-11-29T18:00Z",
+      "date": "2026-11-30T01:20Z",
       "completed": false,
       "status": "Scheduled",
       "is_home": true,

@@ -1,7 +1,7 @@
 {
   "team": "PHI",
   "season": 2026,
-  "fetched_at": "2026-11-17T15:40:23.673609Z",
+  "fetched_at": "2026-11-24T17:10:10.285077Z",
   "games": [
     {
       "id": "401872929",
@@ -250,17 +250,28 @@
       "id": "401873076",
       "week": 11,
       "date": "2026-11-22T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "PHI",
       "away_abbr": "PIT",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 19,
+      "away_score": 16,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "PIT",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 182,
+        "rush_yards_allowed": 73,
+        "receiving_yards_allowed": 182,
+        "total_yards_allowed": 255,
+        "opp_comp_pct": 68.2,
+        "opp_passing_line": "30/44",
+        "interceptions": 0,
+        "third_down_eff": "5-17",
+        "possession_time": "35:30",
+        "points_allowed": 16
+      }
     },
     {
       "id": "401873080",

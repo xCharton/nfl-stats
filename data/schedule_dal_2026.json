@@ -1,7 +1,7 @@
 {
   "team": "DAL",
   "season": 2026,
-  "fetched_at": "2026-11-17T15:40:11.677185Z",
+  "fetched_at": "2026-11-24T17:09:59.664189Z",
   "games": [
     {
       "id": "401872930",
@@ -277,17 +277,28 @@
       "id": "401873073",
       "week": 11,
       "date": "2026-11-22T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "DAL",
       "away_abbr": "TEN",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 51,
+      "away_score": 30,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "TEN",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 220,
+        "rush_yards_allowed": 126,
+        "receiving_yards_allowed": 220,
+        "total_yards_allowed": 346,
+        "opp_comp_pct": 70.0,
+        "opp_passing_line": "21/30",
+        "interceptions": 0,
+        "third_down_eff": "3-10",
+        "possession_time": "27:06",
+        "points_allowed": 30
+      }
     },
     {
       "id": "401873080",

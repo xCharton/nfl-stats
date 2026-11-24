@@ -1,7 +1,7 @@
 {
   "team": "KC",
   "season": 2026,
-  "fetched_at": "2026-11-17T15:40:16.655080Z",
+  "fetched_at": "2026-11-24T17:10:04.530902Z",
   "games": [
     {
       "id": "401872931",
@@ -250,17 +250,28 @@
       "id": "401873067",
       "week": 11,
       "date": "2026-11-22T18:00Z",
-      "completed": false,
+      "completed": true,
       "status": "Scheduled",
       "is_home": true,
       "home_abbr": "KC",
       "away_abbr": "ARI",
-      "home_score": 0,
-      "away_score": 0,
-      "home_winner": false,
+      "home_score": 34,
+      "away_score": 7,
+      "home_winner": true,
       "away_winner": false,
       "opponent": "ARI",
-      "defensive_stats": {}
+      "defensive_stats": {
+        "pass_yards_allowed": 130,
+        "rush_yards_allowed": 75,
+        "receiving_yards_allowed": 130,
+        "total_yards_allowed": 205,
+        "opp_comp_pct": 58.1,
+        "opp_passing_line": "18/31",
+        "interceptions": 0,
+        "third_down_eff": "5-13",
+        "possession_time": "27:34",
+        "points_allowed": 7
+      }
     },
     {
       "id": "401873082",
